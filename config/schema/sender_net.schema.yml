@@ -1,0 +1,8 @@
+# Schema for the configuration files of the sender.net module.
+sender_net.settings:
+  type: config_object
+  label: 'Sender.net settings'
+  mapping:
+    api_access_tokens:
+      type: string
+      label: 'Enter your API access token'
