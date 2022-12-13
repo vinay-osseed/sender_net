@@ -2,6 +2,10 @@
 
 The `Sender.net Integration` module is used to Integrate Drupal with <https://www.sender.net>.
 
+## Features
+
+ 1. Add new email subscriber to <https://www.sender.net>.
+
 ## Installation
 
  1. Get `Sender.net Integration` module and move inside your project's module's directory.
