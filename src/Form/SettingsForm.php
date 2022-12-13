@@ -6,7 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Configure sender.net settings for this site.
+ * Configure sender.net settings.
  */
 class SettingsForm extends ConfigFormBase {
 
@@ -59,7 +59,6 @@ class SettingsForm extends ConfigFormBase {
       ->set('api_access_tokens', $form_state->getValue('api_access_tokens'))
       ->set('api_base_url', $form_state->getValue('api_base_url'))
       ->save();
-    $this->messenger()->addStatus($this->t("API settings are saved."));
     parent::submitForm($form, $form_state);
   }
 

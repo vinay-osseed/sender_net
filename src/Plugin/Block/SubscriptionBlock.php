@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @Block(
  *   id = "sender_net_subscription",
  *   admin_label = @Translation("Sender.net Subscription"),
- *   category = @Translation("sender.net")
+ *   category = @Translation("sender_net")
  * )
  */
 class SubscriptionBlock extends BlockBase implements ContainerFactoryPluginInterface {
