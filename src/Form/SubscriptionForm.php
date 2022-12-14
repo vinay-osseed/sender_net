@@ -81,7 +81,7 @@ class SubscriptionForm extends FormBase {
     ];
     $result = $this->senderApi->createSubscriber($param);
     if ($result) {
-      $this->messenger()->addStatus($this->t("@email email is subscribed", ['@email' => $form_state->getValue('email')]));
+      $this->messenger()->addStatus($this->t("@email email is subscribed.", ['@email' => $form_state->getValue('email')]));
     }
   }
 

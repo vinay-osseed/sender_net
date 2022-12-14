@@ -32,7 +32,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'textarea',
       '#title' => $this->t('Enter your API access token'),
       '#default_value' => $this->config('sender_net.settings')->get('api_access_tokens'),
-      '#description' => $this->t('Get API access tokens from sender.net <a href="https://app.sender.net/settings/tokens" target="_blank">account</a>'),
+      '#description' => $this->t('Get API access tokens from sender.net <a href="https://app.sender.net/settings/tokens" target="_blank">account</a>.'),
       '#required' => TRUE,
     ];
 
@@ -40,7 +40,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Base URL'),
       '#default_value' => 'https://api.sender.net/v2/',
-      '#description' => $this->t('Get Base URL from sender.net <a href="https://api.sender.net/#introduction" target="_blank">docs</a>'),
+      '#description' => $this->t('Get Base URL from sender.net <a href="https://api.sender.net/#introduction" target="_blank">docs</a>.'),
       '#required' => TRUE,
     ];
     return parent::buildForm($form, $form_state);

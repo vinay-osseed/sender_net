@@ -99,7 +99,7 @@ class SenderNetApi {
     try {
       $response = $this->client->request('POST', $subscriber_url, $data);
       if ($response->getStatusCode() === 200) {
-        $this->logger->get('sender_net')->info("@email is subscribed to sender.net", ['@email' => $param['email']]);
+        $this->logger->get('sender_net')->info("@email email is subscribed.", ['@email' => $param['email']]);
         return TRUE;
       }
     }
