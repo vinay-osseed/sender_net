@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  phpcs: vip_migration/phpcs@0.0.1
-
 jobs:
   build:
     docker:
