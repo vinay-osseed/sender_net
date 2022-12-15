@@ -1,18 +1,23 @@
 version: 2.1
 
-orbs:
-  phpcs: vip_migration/phpcs@0.0.1
-
 jobs:
-  example-job:
+  build:
     docker:
-      # replace with your preferred image
-      - image: cimg/base:stable
+      - image: circleci/php:7.4-node-browsers
     steps:
-      - phpcs/install-phpcs:
-          working-dir: /vendor/bin/phpcs
+      - checkout
+
+      - run: sudo apt install wget
+      - run: wget http://pear.php.net/go-pear.phar
+      - run: sudo php go-pear.phar -all
+      - run: sudo pear install PHP_CodeSniffer
+      - run: php -v
+      - run:
+          name: "Drupal Sniffer"
+          command: |
+            phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml web/modules/custom/ web/themes/custom
 
 workflows:
-  example-workflow:
+  1st-Workflow:
     jobs:
-      - example-job
+      - build
