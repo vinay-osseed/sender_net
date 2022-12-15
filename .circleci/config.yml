@@ -7,14 +7,19 @@ jobs:
     steps:
       - checkout
 
-      - run: sudo apt install wget
+      - run: sudo apt install wget curl -y
       - run: wget http://pear.php.net/go-pear.phar
       - run: sudo php go-pear.phar -all
+      - run: sudo rm -f ./go-pear.phar
+      - run: curl -sS https://getcomposer.org/installer | php
+      - run: sudo mv ./composer.phar ./composer
+      - run: composer require drupal/coder
       - run: sudo pear install PHP_CodeSniffer
-      - run: php -v
+      - run: phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
+      - run: phpcs -i
       - run: ls -la
       - run:
-          name: "Drupal Sniffer"
+          name: "Drupal Coding Standards"
           command: |
             phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml ./
 
