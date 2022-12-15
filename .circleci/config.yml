@@ -7,7 +7,11 @@ jobs:
     steps:
       - checkout
 
-      - run: sudo apt install phpcs
+      - run: sudo apt install wget
+      - run: wget http://pear.php.net/go-pear.phar
+      - run: php go-pear.phar
+      - run: pear install PHP_CodeSniffer
+      - run: php -v
       - run:
           name: "Drupal Sniffer"
           command: |
