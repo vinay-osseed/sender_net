@@ -14,11 +14,8 @@ jobs:
       - run: curl -sS https://getcomposer.org/installer | php
       - run: sudo mv ./composer.phar ./.circleci/composer
       - run: cd .circleci && composer require drupal/coder
-      - run: ls -la
-      - run: ls -la ./.circleci/vendor
-      - run: ls -la ./.circleci/vendor/bin
+      - run: ls -la ./ && pwd
       - run: php -i
-      - run: ./.circleci/vendor/bin/phpcs -i
       - run:
           name: "Drupal Coding Standards"
           command: |
