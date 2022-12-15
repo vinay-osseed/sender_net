@@ -14,14 +14,14 @@ jobs:
       - run: curl -sS https://getcomposer.org/installer | php
       - run: sudo mv ./composer.phar ./composer
       - run: composer require drupal/coder
-      - run: sudo ln -s ./vendor/bin/phpcs ./
-      - run: sudo ln -s ./vendor/bin/phpcbf ./
+      # - run: sudo ln -s ./vendor/bin/phpcs
+      # - run: sudo ln -s ./vendor/bin/phpcbf
       # - run: sudo pear install PHP_CodeSniffer
       - run: ls -la
       - run: ls -la ./vendor
       - run: ls -la ./vendor/bin
       - run: ./vendor/bin/phpcs -i
-      - run: ./vendor/bin/phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
+      # - run: ./vendor/bin/phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
       - run:
           name: "Drupal Coding Standards"
           command: |
