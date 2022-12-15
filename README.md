@@ -1,5 +1,7 @@
 # Sender.net Integration
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/vinay-osseed/sender_net/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/vinay-osseed/sender_net/tree/master)
+
 The `Sender.net Integration` module is used to Integrate
 Drupal with <https://www.sender.net>.
 
