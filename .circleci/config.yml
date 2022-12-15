@@ -12,20 +12,17 @@ jobs:
       - run: sudo php go-pear.phar -all
       - run: sudo rm -f ./go-pear.phar
       - run: curl -sS https://getcomposer.org/installer | php
-      - run: sudo mv ./composer.phar ./composer
-      - run: composer require drupal/coder
-      # - run: sudo ln -s ./vendor/bin/phpcs
-      # - run: sudo ln -s ./vendor/bin/phpcbf
-      # - run: sudo pear install PHP_CodeSniffer
+      - run: sudo mv ./composer.phar ./.circleci/composer
+      - run: cd .circleci && composer require drupal/coder
       - run: ls -la
-      - run: ls -la ./vendor
-      - run: ls -la ./vendor/bin
-      - run: ./vendor/bin/phpcs -i
-      # - run: ./vendor/bin/phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
+      - run: ls -la ./.circleci/vendor
+      - run: ls -la ./.circleci/vendor/bin
+      - run: php -i
+      - run: ./.circleci/vendor/bin/phpcs -i
       - run:
           name: "Drupal Coding Standards"
           command: |
-            ./vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml ./
+            ./.circleci/vendor/bin/phpcs -d memory_limit=1G --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml,md ./
 
 workflows:
   1st-Workflow:
