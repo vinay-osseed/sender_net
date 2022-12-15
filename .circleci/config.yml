@@ -15,7 +15,7 @@ jobs:
       - run:
           name: "Drupal Coding Standards"
           command: |
-            ls -la ~/project && ./.circleci/vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml,md ~/project
+            ./.circleci/vendor/bin/phpcs --ignore=./.circleci/* --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml,md ~/project
 
 workflows:
   Drupal-Standards-Workflow:
