@@ -15,7 +15,7 @@ jobs:
       - run:
           name: "Drupal Coding Standards"
           command: |
-            ./.circleci/vendor/bin/phpcs -d memory_limit=500M --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml,md ~/project
+            ls -la ~/project && ./.circleci/vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml,md ~/project
 
 workflows:
   Drupal-Standards-Workflow:
