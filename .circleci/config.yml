@@ -14,8 +14,8 @@ jobs:
       - run: curl -sS https://getcomposer.org/installer | php
       - run: sudo mv ./composer.phar ./composer
       - run: composer require drupal/coder
-      - run: sudo ln -s ~/.composer/vendor/bin/phpcs /usr/local/bin
-      - run: sudo ln -s ~/.composer/vendor/bin/phpcbf /usr/local/bin
+      - run: sudo ln -s ~/.composer/vendor/bin/phpcs ./
+      - run: sudo ln -s ~/.composer/vendor/bin/phpcbf ./
       # - run: sudo pear install PHP_CodeSniffer
       - run: phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
       - run: which phpcs
