@@ -15,7 +15,7 @@ jobs:
       - run: sudo mv ./composer.phar ./composer
       - run: composer require drupal/coder
       - run: sudo pear install PHP_CodeSniffer
-      - run: phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
+      - run: sudo phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
       - run: phpcs -i
       - run: ls -la
       - run:
