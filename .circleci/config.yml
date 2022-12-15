@@ -12,10 +12,11 @@ jobs:
       - run: sudo php go-pear.phar -all
       - run: sudo pear install PHP_CodeSniffer
       - run: php -v
+      - run: ls -la
       - run:
           name: "Drupal Sniffer"
           command: |
-            phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml web/modules/custom/ web/themes/custom
+            phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml ./
 
 workflows:
   1st-Workflow:
