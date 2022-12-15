@@ -6,11 +6,7 @@ jobs:
       - image: circleci/php:7.4-node-browsers
     steps:
       - checkout
-
-      - run: sudo apt install wget curl -y
-      - run: wget http://pear.php.net/go-pear.phar
-      - run: sudo php go-pear.phar -all
-      - run: sudo rm -f ./go-pear.phar
+      - run: sudo apt install curl -y
       - run: curl -sS https://getcomposer.org/installer | php
       - run: sudo mv ./composer.phar ./.circleci/composer
       - run: cd .circleci && composer require drupal/coder
@@ -19,9 +15,9 @@ jobs:
       - run:
           name: "Drupal Coding Standards"
           command: |
-            ./.circleci/vendor/bin/phpcs -d memory_limit=1G --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml,md ./
+            ./.circleci/vendor/bin/phpcs -d memory_limit=500M --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml,md ~/project
 
 workflows:
-  1st-Workflow:
+  Drupal-Standards-Workflow:
     jobs:
       - build
