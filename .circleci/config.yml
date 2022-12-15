@@ -8,10 +8,10 @@ jobs:
       - checkout
 
       - run: sudo apt install wget curl -y
-      - run: wget http://pear.php.net/go-pear.phar .circleci
+      - run: wget http://pear.php.net/go-pear.phar ./.circleci
       - run: sudo php go-pear.phar -all
       - run: sudo rm -f ./.circleci/go-pear.phar
-      - run: curl -sS https://getcomposer.org/installer | php .circleci/
+      - run: curl -sS https://getcomposer.org/installer | php ./.circleci/
       - run: sudo mv ./.circleci/composer.phar ./.circleci/composer
       - run: .circleci/composer require drupal/coder
       - run: sudo .circleci/pear install PHP_CodeSniffer
