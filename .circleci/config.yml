@@ -18,14 +18,14 @@ jobs:
       - run: sudo ln -s ./vendor/bin/phpcbf ./
       # - run: sudo pear install PHP_CodeSniffer
       - run: ls -la
-      - run: which phpcs
-      - run: which phpcbf
-      - run: phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
-      - run: phpcs -i
+      - run: ls -la ./vendor
+      - run: ls -la ./vendor/bin
+      - run: ./vendor/bin/phpcs -i
+      - run: ./vendor/bin/phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
       - run:
           name: "Drupal Coding Standards"
           command: |
-            phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml ./
+            ./vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,yml ./
 
 workflows:
   1st-Workflow:
