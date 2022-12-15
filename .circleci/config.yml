@@ -17,11 +17,11 @@ jobs:
       - run: sudo ln -s ~/.composer/vendor/bin/phpcs ./
       - run: sudo ln -s ~/.composer/vendor/bin/phpcbf ./
       # - run: sudo pear install PHP_CodeSniffer
-      - run: phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
+      - run: ls -la
       - run: which phpcs
       - run: which phpcbf
+      - run: phpcs --config-set installed_paths ./vendor/drupal/coder/coder_sniffer
       - run: phpcs -i
-      - run: ls -la
       - run:
           name: "Drupal Coding Standards"
           command: |
