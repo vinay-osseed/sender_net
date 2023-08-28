@@ -1,8 +1,8 @@
-# Sender.net Integration
+# sender.net Integration
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/vinay-osseed/sender_net/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/vinay-osseed/sender_net/tree/master)
 
-The `Sender.net Integration` module is used to Integrate
+The `sender.net Integration` module is used to Integrate
 Drupal with <https://www.sender.net>.
 
 ## Features
@@ -11,7 +11,7 @@ Drupal with <https://www.sender.net>.
 
 ## Installation
 
- 1. Get `Sender.net Integration` module & move to your module's directory.
+ 1. Get `sender.net Integration` module & move to your module's directory.
  2. Navigate to `Administration > Extend` and install the module.
 
 ## Configurations
@@ -23,6 +23,6 @@ Drupal with <https://www.sender.net>.
 
 ## Subscription
 
-  1. Goto the page where you placed `Sender.net Subscription` block.
+  1. Goto the page where you placed `sender.net Subscription` block.
   2. Add your email address then press `Subscribe`.
   3. Now your email is subscribed with <https://www.sender.net>.
